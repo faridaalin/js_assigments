@@ -1,133 +1,176 @@
+// string
+var four = "4";
+console.log(four);
 
-// Select the h1 by its tag name and log it using dir 
-console.dir(document.querySelector("h1"));
+// number
+var four = 4;
+console.log(four);
 
+var add = 8 + 8;
+var subtract = 8 - 8;
+var multiply = 8 * 8;
+var devide = 8 / 8;
+var modulos = 10 % 3; /*10 % 3 // = 1 ; because 3 * 3 gets you 9, and 10 - 9 is 1.*/
 
-
-// Let's select the h2 element by its tag name and assign it to a variable:
-const heading2 = document.querySelector("h2");
-console.dir(heading2);
-
-
-
-// This time the classList property is not empty, it has the value "heading2".
-// Because the h2 element has a class, we can select it by its class.
-const headingByClass = document.querySelector(".heading2");
-console.dir(headingByClass);
-
-
-// Let's select the ul by its id:
-const list = document.querySelector("#list");
-console.dir(list);
-
-//The innerHTML property for list displays a string version of the HTML inside the ul.
-// This diplays only one li element, the first one with the innerText value of "Dog".
-const listItem = document.querySelector("li");
-console.dir(listItem);
-
-// To select all the li elements, use querySelectorAll:
-//This displays a NodeList (a type of object) with all the li elements as properties.
-const listItems = document.querySelectorAll("li");
-console.dir(listItems);
-
-
-// Loop over the NodeList using brackets to get each item.
-// This will log each li element object.
-for(let i =0; i < listItems.length; i++) {
-    console.dir(listItems[i]);
-}
-
-//Use a for loop to log the innerText value of each li:
-for(let i =0; i < listItems.length; i++) {
-    console.dir(listItems[i].innerText);
+// booloeans
+var lightIsOn = false;
+if (lightIsOn) {
+    console.log("Light is on");
+} else {
+    console.log("Light is off");
 }
 
 
-//Manipulating the elements
+//data types
+var color = "red";
+typeof(color);
+console.log(typeof color);
 
-// Select the h1 element and change its color property on its style object:
-const heading1 = document.querySelector("h1")
-heading1.style.color = "purple";
+var num = 100;
+typeof num;
+console.log(typeof num);
 
-// Add a border:
-heading1.style.border = "1px green solid";
+var isDay = true;
+typeof isDay;
+console.log(typeof isDay);
 
-// Add a background colour and some padding:
-heading1.style.backgroundColor = "lightGray";
-heading1.style.padding = "1em";
 
-//If we select the div using the "div" selector and log its className property, we can see it's empty:
-const div = document.querySelector("div");
-console.log(div.className);
 
-//add a class using the add method on the classList object:
-div.classList.add("container");
-console.log(div.className);
 
-// add a second class:
-div.classList.add("second-class");
-console.log(div.className);
+/*   Comparison Operators
 
-// innerText
+== (equal to, checks only value)
+=== (equal to, checks value and type)
+!= (not equal to, cecks only value)
+!== (not equal to, checks value and type)
+> (greater than)
+>= (greater than or equal to)
+< (less than)
+<= (less than or equal to)
 
-// Use innerText to change the h1 element's text value:
-const pageHeading = document.querySelector("h1");
-pageHeading.innerText = "Updated using innerText";
+Every comparison operation results in True or False value.
+*/
 
-// update the text value of all the lis.
-//use querySelectorAll because we want to select more than one element:
 
-const allTheListItems = document.querySelectorAll("li");
 
-// loop through all the li elements and change their innerText value
-for(let i =0; i < allTheListItems.length; i++) {
-    allTheListItems[i].innerText = i + " changed";
+// Conditional statements  if...else
+
+//Hour
+// If hours is between 6am and 12pm: Good morning!
+// If it is between 12pm and 6pm: Good afternoon!
+// Otherwise: Good evening!
+
+
+if (condition) {
+    statement
+}
+else if (anotherCondition){
+    statement
+}
+else if (yetAnotherCondition){
+statement
+}
+else 
+statement
+
+
+
+var hour = 10; // change number 13, and 22 to see output.
+
+if (hour >= 6 && hour < 12 )
+   console.log('Good morning');
+else if (hour >= 12 && hour < 18)
+    console.log('Good afternoon');
+else 
+    console.log('Good evening');
+
+
+//switch
+ var rating = 5; // change number to check
+
+ switch(rating) {
+     case 1:
+         console.log('Very bad')
+         break;
+    case 2:
+        console.log('Bad')
+        break;
+    case 3:
+        console.log('Average')
+        break;
+    case 4:
+        console.log('Good')
+        break;
+    case 5:
+        console.log('Excelent')
+        break;
+    default:
+        console.log('Enter a valid rating between 1 and 5');
+ }
+
+ //logical operators 
+ /*
+ && - and, returns true if both conditions are true
+ || - or, returns true if any the condition is true
+ ! not, returns true if the condition is false and vice versa
+ */
+
+
+
+// lopps
+/* Different loops
+For 
+While
+Do...while
+For...in
+For...of*/
+
+// For 
+/*
+for (3 statements)
+1 statement - initial expression, declares and initiales a variabel
+2 condition - compare statement with something else, runs as long as the value condition is true
+3 incerement Expression - 
+
+for (let i = 0; ) //1: let - var, declare i and set to 0. i is short for index, commom for convention to use in for loops.
+for (let i = 0; i < 5; ) //2: as lon as i is less than 5, the loop will execute  
+for (let i = 0; i < 5; i++) //3: increment to increment the value of i with 1
+
+
+for (let i = 0; i < 5; i++) {
+ statement
+}
+ */
+
+for (let i = 0; i < 5; i++) {
+    console.log('Hello world')
+   }
+
+for (let i = 0; i < 5; i++) {
+console.log('Hello world', i)
 }
 
-// innerHTML
+for (let i = 0; i < 5; i++) {
+    if (i % 2 !== 0) console.log(i); // if the remainer is not 0. only odd numbers  between 0 - 4 will be printed 
+   }
 
-// use innerHTML to change the h1's value:
-// const pageHeading = document.querySelector("h1"); (We have already declared this in line 74)
-pageHeading.innerHTML = "Updated using innerHTML";
-
-
-//add HTML content to other elements using innerHTML
-const container = document.querySelector("div");
-container.innerHTML = `<p>
-                        <b>Bold text:</b> unbolded text
-                    </p>`;
-
-//add an li to the ul element,
-//by joining the existing innerHTML string value of the ul with a new string value containing the li:
-
-// select the ul
-// const List = document.querySelector("ul");
-
-// get the existing HTML inside the ul element and assign it to a variable
-const existingHTML = list.innerHTML;
-
-// create the new li HTML
-const newHTML = "<li>New item at the end</li>";
-
-// set the ul's new HTML to the existing HTML plus the new HTML 
-list.innerHTML = existingHTML + newHTML;
+// for loop in reversed order
+for (let i = 4; i >= 0; i--) {
+if (i % 2 !== 0) console.log(i);
+}
 
 
-//same code with fewer lines of code:
-// const List = document.querySelector("ul");;  (decklared in in line 104)
-list.innerHTML = list.innerHTML + "<li>New item at the end</li>";
 
-// put the new item at the beginning of the list by reversing the order of the two strings:
-//const list = document.querySelector("ul");
-list.innerHTML = "<li>New item at the beginning</li>" + list.innerHTML;
+// array ["red", "blue", "green", "yellow"]
 
-//Can add a class to the new element inside the string:
-// const ulList = document.querySelector("ul"); 
-// const newHTML = `<li class="red">
-//                     New item at the end
-//                 </li>`;
 
-list.innerHTML = list.innerHTML + newHTML;
 
-//use the shorthand += operator to add the new string to the existing string
-list.innerHTML += newHTML;
+var myNumber = 7;
+var myString = "dog";
+
+console.log(myNumber > 8);
+console.log(myNumber <= 8);
+console.log(myString === "dog");
+console.log(myString !== "cat");
+
+
