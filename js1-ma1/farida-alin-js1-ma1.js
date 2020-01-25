@@ -1,7 +1,7 @@
 // question 1
 
 const cat = {
-    complain: function() {
+    complain: function () {
         console.log("Meow!");
     }
 };
@@ -25,12 +25,11 @@ const paragraphs = document.querySelectorAll("p");
 // question 6
 
 const resultsContainer = document.querySelector(".results");
-resultsContainer.innerHTML = "<p>New paragraph</p>";
+resultsContainer.innerHTML += "<p>New paragraph</p>";
 
 // question 7
 
-const cats = [
-    {
+const cats = [{
         name: "Blob",
         age: 10,
     },
@@ -43,77 +42,52 @@ const cats = [
     }
 ];
 
-function catFunction (catArray) {
+function catFunction(catArray) {
     for (let i = 0; i < catArray.length; i++) {
         console.log(catArray[i].name);
     }
 };
-catFunction(cats);
+// catFunction(cats);
 
 // question 8
 
-function catFunction (catArray) {
+function catFunction(catArray) {
     let name = "";
     for (let i = 0; i < catArray.length; i++) {
-        name = `<h5>${catArray[i].name}</h5>`;
-        console.log(name);
-        
+        name += `<h5>${catArray[i].name}</h5>`;
     }
-    //  return name;
-};
+
+    return name;
+}
 catFunction(cats);
+
 
 
 // question 9
 
-// catFunction(cats);
-// resultsContainer.innerHTML = name;
+
+resultsContainer.innerHTML += catFunction(cats);
 
 
 
 // question 10
 
-
-
-// function catFunction (catArray) {
-//     let name = "";
-//     let ageMissing = "Age Uknown"; 
-
-//     for (let i = 0; i < catArray.length; i++) {
-         
-//     if(catArray[i].age) {
-//
-//         catArray[i].age;
-//     } else {
-//         let ageMissing = "Age Uknown"; 
-//     }
-
-//         name = `<div>
-//                 <h5>${catArray[i].name}</h5>
-//                 <p>${catArray[i].age}</p>
-//                 </div>`;
-
-//         console.log(name);
-        
-//     }
+function catFunction(catArray) {
+    let name = "";
     
-// };
+    for (let i = 0; i < catArray.length; i++) {
+
+        const ageValue = catArray[i].age ? catArray[i].age : "Age Uknown";
+    
+        name += `<div>
+                    <h5>${catArray[i].name}</h5>
+                    <p>${ageValue}</p>
+                </div>`;
+
+
+    }
+    return name;
+}
+
 
 // catFunction(cats);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
