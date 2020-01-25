@@ -6,6 +6,8 @@ const cat = {
     }
 };
 
+cat.complain();
+
 // question 2
 
 const heading = document.querySelector("h3");
@@ -31,10 +33,10 @@ resultsContainer.innerHTML += "<p>New paragraph</p>";
 
 const cats = [{
         name: "Blob",
-        age: 10,
+        age: 10
     },
     {
-        name: "Harold",
+        name: "Harold"
     },
     {
         name: "Blurt",
@@ -46,8 +48,8 @@ function catFunction(catArray) {
     for (let i = 0; i < catArray.length; i++) {
         console.log(catArray[i].name);
     }
-};
-// catFunction(cats);
+}
+catFunction(cats);
 
 // question 8
 
@@ -61,33 +63,24 @@ function catFunction(catArray) {
 }
 catFunction(cats);
 
-
-
 // question 9
 
-
 resultsContainer.innerHTML += catFunction(cats);
-
-
 
 // question 10
 
 function catFunction(catArray) {
     let name = "";
-    
-    for (let i = 0; i < catArray.length; i++) {
 
-        const ageValue = catArray[i].age ? catArray[i].age : "Age Uknown";
-    
+    for (let i = 0; i < catArray.length; i++) {
+        let ageValue = catArray[i].age ? catArray[i].age : "Age Uknown";
+
         name += `<div>
                     <h5>${catArray[i].name}</h5>
                     <p>${ageValue}</p>
                 </div>`;
-
-
     }
     return name;
 }
 
-
-// catFunction(cats);
+catFunction(cats);
