@@ -15,9 +15,7 @@ function buttonClicked() {
 
 // question 3
 const inputField = document.querySelector("#firstName");
-inputField.addEventListener("keydown", function valueOfKeydown() {
-    console.dir(event.target.value);
-  });
+inputField.addEventListener("keydown", valueOfKeydown);
 
 function valueOfKeydown() {
   console.dir(event.target.value);
@@ -25,19 +23,22 @@ function valueOfKeydown() {
 
 // question 4
 const buttonHover = document.querySelector("button");
-buttonHover.addEventListener("mouseover", function addHover() {
-    buttonHover.classList.add("hover");
-  });
+buttonHover.addEventListener("mouseover", addHover);
 
+function addHover() {
+  buttonHover.classList.add("hover");
+}
 
 // question 5
 const buttonData = document.querySelector('[data-animal="dog"]');
 
-buttonData.addEventListener("mouseout", function() {
-  buttonData.classList.remove("hover");
-});
+buttonData.addEventListener("mouseout", removeHover);
 
-//question 6
+function removeHover() {
+  buttonData.classList.remove("hover");
+}
+
+// question 6
 const list = document.querySelectorAll("li");
 
 for (let i = 0; i < list.length; i++) {
@@ -49,7 +50,7 @@ function printOutDataValue(event) {
   console.log(listDataValue);
 }
 
-//question 7
+// question 7
 const animal = "cow";
 
 switch (animal) {
@@ -84,7 +85,7 @@ const interValId = setInterval(function logTime() {
     counter++;
   }, 500);
 
-// question 10
+// // question 10
 const divContainer = document.querySelector(".container");
 
 let newContent = "Text updated";
