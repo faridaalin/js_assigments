@@ -77,13 +77,15 @@ sheep.forEach(function(sheeps) {
 // question 9
 let counter = 0;
 
-const interValId = setInterval(function logTime() {
-    console.log("Hello");
-    if (counter === 5) {
-      clearInterval(interValId);
-    }
-    counter++;
-  }, 500);
+function logTime() {
+  console.log("Hello");
+  if (counter === 5) {
+    clearInterval(interValId);
+  }
+  counter++;
+};
+
+const interValId = setInterval(logTime, 500);
 
 // // question 10
 const divContainer = document.querySelector(".container");
@@ -93,3 +95,4 @@ let newContent = "Text updated";
 setTimeout(function() {
   divContainer.innerHTML = newContent;
 }, 2000);
+
