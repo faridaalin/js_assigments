@@ -59,3 +59,4 @@ function displayRating(json) {
   const ratingContainer = document.querySelector(".rating");
   ratingContainer.innerText = json.rating;
 }
+
