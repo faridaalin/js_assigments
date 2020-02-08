@@ -1,5 +1,5 @@
 // question 1
-// (a, b) => a - b;
+(a, b) => a - b;
 
 // question 2
 const gamesUrl = "https://api.rawg.io/api/games?genres=sports";
@@ -17,23 +17,45 @@ function gamesfunctionLoop(json) {
 }
 
 // question 3
-const sentence1 = 'These cats are outrageous.'
-const sentence2 = sentence1.replace('cat','giraffes' )
-
-// your answer for question 1 goes here
+const sentence1 = "These cats are outrageous.";
+const sentence2 = sentence1.replace("cats", "giraffes");
 
 // question 4
+const url = new URL("https://my.site.com?userId=7");
+const urlParams = new URLSearchParams(url.search);
 
-// your answer for question 1 goes here
+if(!urlParams.has('userId')) {
+    document.location.href = 'third.html';
+} else if(urlParams.get("userId") < 10) {
+    document.location.href = 'first.html' ;
+} else {
+    document.location.href = 'second.html';
+}
 
 // question 5
-
-// your answer for question 1 goes here
+const button = document.querySelector(".btn");
+button.parentNode.removeChild(button);
 
 // question 6
+const li = document.createElement("li");
+li.className = "parrots";
+li.textContent = "Parrots";
 
-// your answer for question 1 goes here
+const parentList = document.querySelector(".animals");
+const listchildren = parentList.children;
+
+listchildren[0].after(li);
+
 
 // question 7
+const ratingsUrl = "https://api.rawg.io/api/games/3801";
 
-// your answer for question 1 goes here
+fetch(ratingsUrl)
+  .then(response => response.json())
+  .then(json => displayRating(json))
+  .catch(error => console.dir(error));
+
+function displayRating(games) {
+  const ratingContainer = document.querySelector(".rating");
+  ratingContainer.innerText = games.rating;
+}
