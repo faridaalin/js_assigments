@@ -55,7 +55,7 @@ fetch(ratingsUrl)
   .then(json => displayRating(json))
   .catch(error => console.dir(error));
 
-function displayRating(games) {
+function displayRating(json) {
   const ratingContainer = document.querySelector(".rating");
-  ratingContainer.innerText = games.rating;
+  ratingContainer.innerText = json.rating;
 }
